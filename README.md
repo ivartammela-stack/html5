@@ -54,7 +54,8 @@
 ---
 
 ## Ekraanipilt
-Lisa pilt kausta `docs/` ja nimeta `screenshot.png`.  
+Lisa pilt kausta `docs/` ja nimeta `screenshot.png`
+Lisa pilt kausta `docs/` ja nimeta `screenshot1.png`
 Viide pildile README-s:
 
 ![Traatkaart – Dropbox avaleht](docs/screenshot.png)
