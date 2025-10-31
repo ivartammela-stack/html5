@@ -53,6 +53,13 @@
 
 ---
 
+## Ekraanipilt
+Lisa pilt kausta `docs/` ja nimeta `screenshot.png`
+Lisa pilt kausta `docs/` ja nimeta `screenshot1.png`
+Viide pildile README-s:
 
+**Lauaarvuti:**
+![Traatkaart – Dropbox avaleht (lai vaade)](docs/screenshot1.png)
 
-![Traatkaart – Dropbox avaleht](docs/screenshot.png)
+**Mobiilivaade:**
+![Traatkaart – Dropbox avaleht (kitsas vaade)](docs/screenshot.png)
