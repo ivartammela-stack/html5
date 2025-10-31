@@ -10,7 +10,7 @@
 ## Projekti sisu
 - `index.html` — semantiline skeem (valge taust, mustad kastid).
 - `README.md` — lühidokumentatsioon (see fail).
-- *(soovi korral)* `docs/screenshot.png` — skeemi ekraanipilt.
+- 
 
 ---
 
@@ -53,9 +53,6 @@
 
 ---
 
-## Ekraanipilt
-Lisa pilt kausta `docs/` ja nimeta `screenshot.png`
-Lisa pilt kausta `docs/` ja nimeta `screenshot1.png`
-Viide pildile README-s:
+
 
 ![Traatkaart – Dropbox avaleht](docs/screenshot.png)
