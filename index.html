@@ -3,51 +3,133 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML5 Traatkaart – Dropbox avaleht</title>
+  <title>Dropbox – HTML5 Clean Wireframe</title>
+
   <style>
-    /* --- Minimaalne CSS: ainult kastid ja lihtne paigutus --- */
+    /* --- Üldine clean look --- */
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, sans-serif; background: #fff; color: #000; }
-    a { color: inherit; text-decoration: none; }
-    /* Kasti visuaal */
-    header, nav, main, section, article, aside, footer, figure, address {
-      border: 2px solid #000; padding: 1rem; margin: 1rem; background: #fff;
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f7;
+      color: #111827;
+      line-height: 1.5;
     }
-    /* Skip-link ligipääsetavuseks */
-    .skip-link { position: absolute; left: -999px; top: -999px; }
-    .skip-link:focus {
-      left: 1rem; top: 1rem; background: #000; color: #fff; padding: .5rem .75rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    /* Nav loend */
-    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: .75rem; flex-wrap: wrap; }
-    /* Hero minimaalselt */
-    .hero { min-height: 30vh; display: grid; place-items: center; text-align: center; }
-    /* Grid sektsioonidele ilma div'ideta */
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Keskne konteiner */
+    header, main, footer {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* Clean kaardid */
+    section, article, aside, nav, figure {
+      background: white;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    header, footer {
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      margin-top: 0;
+    }
+
+    /* Päis nav */
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+    }
+
+    /* Gridi paigutus */
     section[data-layout="promo"],
     section[data-layout="content"] {
-      display: grid; gap: 1rem;
+      display: grid;
+      gap: 1rem;
     }
-    /* Mobiil: üks veerg (320px loetav) */
+
     @media (max-width: 767px) {
       section[data-layout="promo"]   { grid-template-columns: 1fr; }
       section[data-layout="content"] { grid-template-columns: 1fr; }
     }
-    /* Lauaarvuti: mitu veergu */
+
     @media (min-width: 768px) {
       section[data-layout="promo"]   { grid-template-columns: repeat(3, 1fr); }
-      section[data-layout="content"] { grid-template-columns: 2fr 1fr; } /* sisu + aside */
-      section[data-layout] > h2 { grid-column: 1 / -1; } /* pealkiri üle rea */
+      section[data-layout="content"] { grid-template-columns: 2fr 1fr; }
+      section[data-layout] > h2 { grid-column: 1 / -1; }
     }
-    h1, h2, h3 { margin: 0 0 .5rem; }
-    form[role="search"] { display: grid; gap: .5rem; justify-items: center; }
-    input, button { padding: .5rem .75rem; border: 2px solid #000; background: #fff; }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -999px; left: -999px;
+      background: #000; color: #fff;
+      padding: .5rem .75rem;
+      border-radius: 4px;
+    }
+    .skip-link:focus {
+      top: 1rem; left: 1rem;
+    }
+
+    /* Form clean style */
+    form {
+      display: grid;
+      gap: .5rem;
+      justify-items: center;
+    }
+
+    input, button {
+      padding: .6rem .9rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #fff;
+      font-size: 1rem;
+    }
+
+    button {
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      border: none;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Ava põhisisu (skip to content)</a>
 
-  <header aria-label="Lehe päis">
+<body>
+
+  <a class="skip-link" href="#main">Ava põhisisu</a>
+
+  <header>
     <h2>Dropbox</h2>
+
     <nav aria-label="Põhinavigatsioon">
       <ul>
         <li><a href="#">Funktsioonid</a></li>
@@ -59,55 +141,57 @@
   </header>
 
   <main id="main" tabindex="-1">
+
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title">Tööta targalt Dropboxiga</h1>
       <p>Pilveteenus, mis aitab sul talletada, jagada ja koostööd teha turvaliselt.</p>
-      <form role="search" aria-label="Otsing">
+
+      <form role="search">
         <label for="q">Otsi</label>
-        <input id="q" name="q" placeholder="Otsi Dropboxi sisu">
+        <input id="q" name="q" type="search" placeholder="Otsi Dropboxi sisu">
         <button type="submit">Otsi</button>
       </form>
     </section>
 
-    <!-- PROMOPLOKID -->
+    <!-- PROMO GRID -->
     <section aria-labelledby="promo-title" data-layout="promo">
       <h2 id="promo-title">Dropboxi põhifunktsioonid</h2>
 
-      <article aria-labelledby="p1">
-        <h3 id="p1">Failide talletamine</h3>
+      <article>
+        <h3>Failide talletamine</h3>
         <p>Hoiusta oma dokumendid, fotod ja videod pilves.</p>
       </article>
 
-      <article aria-labelledby="p2">
-        <h3 id="p2">Jagamine ja koostöö</h3>
+      <article>
+        <h3>Jagamine ja koostöö</h3>
         <p>Jaga linke ja tee meeskonnaga koostööd reaalajas.</p>
       </article>
 
-      <article aria-labelledby="p3">
-        <h3 id="p3">Turvalisus ja varundus</h3>
+      <article>
+        <h3>Turvalisus ja varundus</h3>
         <p>Sinu andmed on kaitstud ja taastatavad igal ajal.</p>
       </article>
     </section>
 
-    <!-- SISU + ASIDE -->
+    <!-- CONTENT + ASIDE -->
     <section aria-labelledby="content-title" data-layout="content">
       <h2 id="content-title">Kuidas Dropbox töötab</h2>
 
-      <article aria-labelledby="a1">
-        <h3 id="a1">Sünkroonimine kõigis seadmetes</h3>
+      <article>
+        <h3>Sünkroonimine kõigis seadmetes</h3>
         <p>Failid värskenevad automaatselt nii arvutis kui mobiilis.</p>
         <figure>
           <figcaption>Pildiplokk: sünkroonimise illustratsiooni koht</figcaption>
         </figure>
       </article>
 
-      <aside aria-labelledby="aside-title">
-        <h3 id="aside-title">Dropboxi lisateenused</h3>
+      <aside>
+        <h3>Dropboxi lisateenused</h3>
         <ul>
-          <li>Paper (märkmete koostamine)</li>
-          <li>Sign (dokumentide allkirjastamine)</li>
-          <li>Backup (automaatsed koopiad)</li>
+          <li>Paper</li>
+          <li>Sign</li>
+          <li>Backup</li>
         </ul>
       </aside>
     </section>
@@ -118,10 +202,11 @@
       <p>Proovi Dropboxi 30 päeva tasuta ja avasta, kui lihtne koostöö võib olla.</p>
       <p><a href="#">Alusta kohe</a></p>
     </section>
+
   </main>
 
-  <footer aria-labelledby="footer-title">
-    <h2 id="footer-title">Jalus</h2>
+  <footer>
+    <h2>Jalus</h2>
 
     <nav aria-label="Jalusnavigatsioon">
       <ul>
@@ -133,5 +218,6 @@
 
     <address>Dropbox Inc., 1800 Owens St, San Francisco, CA</address>
   </footer>
+
 </body>
 </html>
